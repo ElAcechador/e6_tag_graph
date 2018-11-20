@@ -89,7 +89,7 @@ def fetch_tag_data(tag_id=None, tagname=None):
 def graph_tag_impl_chain(initial_tag:str):
     tags_to_explore = [initial_tag]
 
-    g = Digraph(name=initial_tag, format='png')
+    g = Digraph(name=initial_tag, format='png', strict=True)
 
     while(len(tags_to_explore) != 0):
         current_tag = tags_to_explore.pop()
@@ -104,13 +104,14 @@ def graph_tag_impl_chain(initial_tag:str):
             with g.subgraph(name='cluster_{}'.format(tag['name'])) as c:
                 c.attr(style='filled')
 
-                c.node_attr.update(style='filled', color='lightgrey')
+                c.node_attr.update(style='solid,setlinewidth(0)')
 
                 c.node(tag['name'], style='filled', color="white")
                 
                 for aliased_tag in alias_data:
                     alias_color = 'red' if aliased_tag['pending'] else 'black'
-                    c.edge(aliased_tag['name'], tag['name'], style='invis', color=alias_color)
+                    c.node(aliased_tag['name'], fontcolor=alias_color)
+                    c.edge(aliased_tag['name'], tag['name'], style='invis')
 
             edge_style = 'dotted' if tag['pending'] else 'solid'
             g.edge(tag['name'], current_tag, style=edge_style)
