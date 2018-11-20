@@ -1,4 +1,5 @@
 
+import sys
 from graphviz import Digraph
 import requests
 from ratelimit import limits, sleep_and_retry
@@ -85,31 +86,41 @@ def fetch_tag_data(tag_id=None, tagname=None):
     tag_lookup_tbl.append(tag_data)
     return tag_data
 
+def graph_tag_impl_chain(initial_tag:str):
+    tags_to_explore = [initial_tag]
 
-tags_to_explore = ['male']
+    g = Digraph('G', filename='cluster.gv')
 
-g = Digraph('G', filename='cluster.gv')
+    while(len(tags_to_explore) != 0):
+        current_tag = tags_to_explore.pop()
 
-while(len(tags_to_explore) != 0):
-    current_tag = tags_to_explore.pop()
+        implication_data = get_implications_for_tag(current_tag)
 
-    implication_data = get_implications_for_tag(current_tag)
+        for tag in implication_data:
+            tags_to_explore.append(tag['name'])
 
-    for tag in implication_data:
-        tags_to_explore.append(tag['name'])
+            alias_data = get_aliases_for_tag(tag['name'])
 
-        alias_data = get_aliases_for_tag(tag['name'])
+            with g.subgraph(name='cluster_{}'.format(tag['name'])) as c:
+                c.attr(style='filled')
 
-        with g.subgraph(name='cluster_{}'.format(tag['name'])) as c:
-            c.attr(style='filled')
+                c.node_attr.update(style='filled', color='lightgrey')
 
-            c.node_attr.update(style='filled', color='lightgrey')
+                c.node(tag['name'], style='filled', color="white")
+                
+                for aliased_tag in alias_data:
+                    c.edge(aliased_tag['name'], tag['name'], style='invis')
 
-            c.node(tag['name'], style='filled', color="white")
-            
-            for aliased_tag in alias_data:
-                c.edge(aliased_tag['name'], tag['name'], style='invis')
+            g.edge(tag['name'], current_tag)
 
-        g.edge(tag['name'], current_tag)
+    return g
 
-g.view()
+if __name__ == "__main__":
+    if len(sys.argv) == 2:
+        initial_tag = sys.argv[1]
+        print("Initial tag: {}".format(initial_tag))
+        g = graph_tag_impl_chain(initial_tag)
+        g.view()
+    else:
+        print("You must provide exactly one initial tag as argument")
+        sys.exit(1)
