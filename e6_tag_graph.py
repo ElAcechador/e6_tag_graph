@@ -23,26 +23,44 @@ def get_tag_name_by_id(tag_id):
     except StopIteration:
         return fetch_tag_data(tag_id=tag_id)['name']
 
-@sleep_and_retry
-@limits(calls=1, period=1)
 def get_aliases_for_tag(tagname):
-    r = requests.get('https://e621.net/tag_alias/index.json', params={'aliased_to':tagname}, headers=headers)
-    alias_data = r.json()
+    page_num = 1
+    alias_data = []
 
+    while True:
+        partial_alias_data = get_aliases_page(tagname, page_num)
+        
+        if len(partial_alias_data) == 0:
+            break
+        
+        alias_data.extend(partial_alias_data)
+        page_num += 1
+        
     tag_id = get_tag_id_by_name(tagname)
-    print(tag_id)
     alias_data = list(filter(lambda alias: alias['alias_id'] == tag_id, alias_data))
 
     return alias_data
 
 @sleep_and_retry
 @limits(calls=1, period=1)
+def get_aliases_page(tagname, page):
+    print("Aliases for {}, page {}".format(tagname, page))
+    r = requests.get('https://e621.net/tag_alias/index.json', params={'aliased_to':tagname, 'page': page}, headers=headers)
+    return r.json()
+
 def get_implications_for_tag(tagname):
-    r = requests.get('https://e621.net/tag_implication/index.json', params={'implied_to':tagname}, headers=headers)
-    impl_data = r.json()
+    page_num = 1
+    impl_data = []
+
+    while True:
+        partial_impl_data = get_implications_page(tagname, page_num)
+        if len(partial_impl_data) == 0:
+            break
+        
+        impl_data.extend(partial_impl_data)
+        page_num += 1
 
     tag_id = get_tag_id_by_name(tagname)
-    print(tag_id)
     impl_data = list(filter(lambda alias: alias['consequent_id'] == tag_id, impl_data))
 
     for nameless_tag in impl_data:
@@ -52,7 +70,15 @@ def get_implications_for_tag(tagname):
 
 @sleep_and_retry
 @limits(calls=1, period=1)
+def get_implications_page(tagname, page):
+    print("Implications for {}, page {}".format(tagname, page))
+    r = requests.get('https://e621.net/tag_implication/index.json', params={'implied_to':tagname, 'page': page}, headers=headers)
+    return r.json()
+
+@sleep_and_retry
+@limits(calls=1, period=1)
 def fetch_tag_data(tag_id=None, tagname=None):
+    print("Tag data for {}".format(tagname) if tagname else "Tag data for #{}".format(tag_id))
     r = requests.get('https://e621.net/tag/show.json', params={'id':tag_id, 'name':tagname}, headers=headers)
     
     tag_data = r.json()
@@ -66,7 +92,7 @@ tags_to_explore = ['mammal']
 
 current_tag = tags_to_explore.pop()
 
-print(get_implications_for_tag(current_tag))
+print(get_aliases_for_tag(current_tag))
 
 """
 implication_data = get_implications_for_tag(current_tag)
