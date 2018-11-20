@@ -89,7 +89,7 @@ def fetch_tag_data(tag_id=None, tagname=None):
 def graph_tag_impl_chain(initial_tag:str):
     tags_to_explore = [initial_tag]
 
-    g = Digraph('G', filename='cluster.gv')
+    g = Digraph(name=initial_tag, format='png')
 
     while(len(tags_to_explore) != 0):
         current_tag = tags_to_explore.pop()
@@ -109,9 +109,11 @@ def graph_tag_impl_chain(initial_tag:str):
                 c.node(tag['name'], style='filled', color="white")
                 
                 for aliased_tag in alias_data:
-                    c.edge(aliased_tag['name'], tag['name'], style='invis')
+                    alias_color = 'red' if aliased_tag['pending'] else 'black'
+                    c.edge(aliased_tag['name'], tag['name'], style='invis', color=alias_color)
 
-            g.edge(tag['name'], current_tag)
+            edge_style = 'dotted' if tag['pending'] else 'solid'
+            g.edge(tag['name'], current_tag, style=edge_style)
 
     return g
 
