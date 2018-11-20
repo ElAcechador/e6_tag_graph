@@ -1,0 +1,171 @@
+digraph vore {
+	subgraph cluster_full_tour {
+		node [color=lightgrey style=filled]
+		style=filled
+		full_tour [color=white style=filled]
+	}
+	full_tour -> vore [style=dotted]
+	subgraph cluster_multiple_inside {
+		node [color=lightgrey style=filled]
+		style=filled
+		multiple_inside [color=white style=filled]
+	}
+	multiple_inside -> vore [style=dotted]
+	subgraph cluster_nasal_vore {
+		node [color=lightgrey style=filled]
+		style=filled
+		nasal_vore [color=white style=filled]
+	}
+	nasal_vore -> vore [style=dotted]
+	subgraph cluster_absorption_vore {
+		node [color=lightgrey style=filled]
+		style=filled
+		absorption_vore [color=white style=filled]
+		absorbtion_vore -> absorption_vore [color=black style=invis]
+		absorption -> absorption_vore [color=black style=invis]
+	}
+	absorption_vore -> vore [style=solid]
+	subgraph cluster_anal_vore {
+		node [color=lightgrey style=filled]
+		style=filled
+		anal_vore [color=white style=filled]
+	}
+	anal_vore -> vore [style=solid]
+	subgraph cluster_auto_vore {
+		node [color=lightgrey style=filled]
+		style=filled
+		auto_vore [color=white style=filled]
+		autocannibalism -> auto_vore [color=red style=invis]
+	}
+	auto_vore -> vore [style=solid]
+	subgraph cluster_breast_vore {
+		node [color=lightgrey style=filled]
+		style=filled
+		breast_vore [color=white style=filled]
+	}
+	breast_vore -> vore [style=solid]
+	subgraph cluster_cock_vore {
+		node [color=lightgrey style=filled]
+		style=filled
+		cock_vore [color=white style=filled]
+		cockvore -> cock_vore [color=black style=invis]
+	}
+	cock_vore -> vore [style=solid]
+	subgraph cluster_cum_vore {
+		node [color=lightgrey style=filled]
+		style=filled
+		cum_vore [color=white style=filled]
+		cum_digestion -> cum_vore [color=black style=invis]
+	}
+	cum_vore -> vore [style=solid]
+	subgraph cluster_hard_vore {
+		node [color=lightgrey style=filled]
+		style=filled
+		hard_vore [color=white style=filled]
+	}
+	hard_vore -> vore [style=solid]
+	subgraph cluster_imminent_vore {
+		node [color=lightgrey style=filled]
+		style=filled
+		imminent_vore [color=white style=filled]
+		impending_vore -> imminent_vore [color=black style=invis]
+		pre_vore -> imminent_vore [color=black style=invis]
+		"pre-vore" -> imminent_vore [color=black style=invis]
+	}
+	imminent_vore -> vore [style=solid]
+	subgraph cluster_nipple_vore {
+		node [color=lightgrey style=filled]
+		style=filled
+		nipple_vore [color=white style=filled]
+		vore_nipples -> nipple_vore [color=black style=invis]
+	}
+	nipple_vore -> vore [style=solid]
+	subgraph cluster_oral_vore {
+		node [color=lightgrey style=filled]
+		style=filled
+		oral_vore [color=white style=filled]
+	}
+	oral_vore -> vore [style=solid]
+	subgraph cluster_post_vore {
+		node [color=lightgrey style=filled]
+		style=filled
+		post_vore [color=white style=filled]
+		"post-vore" -> post_vore [color=black style=invis]
+		post_vore_belly -> post_vore [color=black style=invis]
+	}
+	post_vore -> vore [style=solid]
+	subgraph cluster_pussy_juice_vore {
+		node [color=lightgrey style=filled]
+		style=filled
+		pussy_juice_vore [color=white style=filled]
+	}
+	pussy_juice_vore -> vore [style=solid]
+	subgraph cluster_same_size_vore {
+		node [color=lightgrey style=filled]
+		style=filled
+		same_size_vore [color=white style=filled]
+	}
+	same_size_vore -> vore [style=solid]
+	subgraph cluster_soft_vore {
+		node [color=lightgrey style=filled]
+		style=filled
+		soft_vore [color=white style=filled]
+		softvore -> soft_vore [color=black style=invis]
+	}
+	soft_vore -> vore [style=solid]
+	subgraph cluster_tail_vore {
+		node [color=lightgrey style=filled]
+		style=filled
+		tail_vore [color=white style=filled]
+	}
+	tail_vore -> vore [style=solid]
+	subgraph cluster_unbirthing {
+		node [color=lightgrey style=filled]
+		style=filled
+		unbirthing [color=white style=filled]
+		unbirth -> unbirthing [color=black style=invis]
+		vaginal_vore -> unbirthing [color=black style=invis]
+		vagina_vore -> unbirthing [color=black style=invis]
+		vore_pussy -> unbirthing [color=black style=invis]
+	}
+	unbirthing -> vore [style=solid]
+	subgraph cluster_urethral_vore {
+		node [color=lightgrey style=filled]
+		style=filled
+		urethral_vore [color=white style=filled]
+		urethra_vore -> urethral_vore [color=black style=invis]
+	}
+	urethral_vore -> vore [style=solid]
+	subgraph cluster_nipple_vore {
+		node [color=lightgrey style=filled]
+		style=filled
+		nipple_vore [color=white style=filled]
+		vore_nipples -> nipple_vore [color=black style=invis]
+	}
+	nipple_vore -> breast_vore [style=dotted]
+	subgraph cluster_butt_absorption {
+		node [color=lightgrey style=filled]
+		style=filled
+		butt_absorption [color=white style=filled]
+		ass_absorption -> butt_absorption [color=black style=invis]
+	}
+	butt_absorption -> absorption_vore [style=solid]
+	subgraph cluster_soul_vore {
+		node [color=lightgrey style=filled]
+		style=filled
+		soul_vore [color=white style=filled]
+	}
+	soul_vore -> absorption_vore [style=solid]
+	subgraph cluster_sex_inside {
+		node [color=lightgrey style=filled]
+		style=filled
+		sex_inside [color=white style=filled]
+	}
+	sex_inside -> multiple_inside [style=dotted]
+	subgraph cluster_snake_impalement {
+		node [color=lightgrey style=filled]
+		style=filled
+		snake_impalement [color=white style=filled]
+	}
+	snake_impalement -> full_tour [style=dotted]
+}
