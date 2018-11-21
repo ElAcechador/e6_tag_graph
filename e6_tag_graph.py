@@ -89,7 +89,11 @@ def fetch_tag_data(tag_id=None, tagname=None):
 def graph_tag_impl_chain(initial_tag:str):
     tags_to_explore = [initial_tag]
 
-    g = Digraph(name=initial_tag, format='png', strict=True)
+    g = Digraph(name=initial_tag, format='svg', engine='circo', strict=True)
+    
+    #g.attr('graph', ratio="1.0")
+    g.attr('graph', overlap="false")
+    g.attr('graph', ranksep="3.0", nodesep="2.0")
 
     while(len(tags_to_explore) != 0):
         current_tag = tags_to_explore.pop()
@@ -102,18 +106,17 @@ def graph_tag_impl_chain(initial_tag:str):
             alias_data = get_aliases_for_tag(tag['name'])
 
             with g.subgraph(name='cluster_{}'.format(tag['name'])) as c:
-                c.attr(style='filled')
-
                 c.node_attr.update(style='solid,setlinewidth(0)')
 
-                c.node(tag['name'], style='filled', color="white")
+                c.node(tag['name'], style='filled,setlinewidth(1)', color="white", href="https://e621.net/wiki/show/{}".format(requests.utils.quote(tag['name'])))
                 
                 for aliased_tag in alias_data:
                     alias_color = 'red' if aliased_tag['pending'] else 'black'
+                    edge_style = 'dotted' if aliased_tag['pending'] else 'solid'
                     c.node(aliased_tag['name'], fontcolor=alias_color)
-                    c.edge(aliased_tag['name'], tag['name'], style='invis')
+                    c.edge(aliased_tag['name'], tag['name'], style=edge_style, color=alias_color)
 
-            edge_style = 'dotted' if tag['pending'] else 'solid'
+            edge_style = 'dashed,bold' if tag['pending'] else 'bold'
             g.edge(tag['name'], current_tag, style=edge_style)
 
     return g

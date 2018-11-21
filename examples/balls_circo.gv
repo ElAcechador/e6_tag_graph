@@ -1,0 +1,207 @@
+strict digraph balls {
+	graph [overlap=false]
+	graph [nodesep=2.0 ranksep=3.0]
+	subgraph cluster_balls_expansion {
+		node [style="solid,setlinewidth(0)"]
+		balls_expansion [color=white href="https://e621.net/wiki/show/balls_expansion" style="filled,setlinewidth(1)"]
+		ball_growth [fontcolor=red]
+		ball_growth -> balls_expansion [color=red style=dotted]
+		balls_growth [fontcolor=red]
+		balls_growth -> balls_expansion [color=red style=dotted]
+	}
+	balls_expansion -> balls [style="dashed,bold"]
+	subgraph cluster_micro_balls {
+		node [style="solid,setlinewidth(0)"]
+		micro_balls [color=white href="https://e621.net/wiki/show/micro_balls" style="filled,setlinewidth(1)"]
+	}
+	micro_balls -> balls [style="dashed,bold"]
+	subgraph cluster_testicle_pregnancy {
+		node [style="solid,setlinewidth(0)"]
+		testicle_pregnancy [color=white href="https://e621.net/wiki/show/testicle_pregnancy" style="filled,setlinewidth(1)"]
+	}
+	testicle_pregnancy -> balls [style="dashed,bold"]
+	subgraph cluster_backsack {
+		node [style="solid,setlinewidth(0)"]
+		backsack [color=white href="https://e621.net/wiki/show/backsack" style="filled,setlinewidth(1)"]
+		back_sack [fontcolor=black]
+		back_sack -> backsack [color=black style=solid]
+	}
+	backsack -> balls [style=bold]
+	subgraph cluster_ball_fondling {
+		node [style="solid,setlinewidth(0)"]
+		ball_fondling [color=white href="https://e621.net/wiki/show/ball_fondling" style="filled,setlinewidth(1)"]
+		ball_cradling [fontcolor=black]
+		ball_cradling -> ball_fondling [color=black style=solid]
+		caressing_testicles [fontcolor=black]
+		caressing_testicles -> ball_fondling [color=black style=solid]
+		fondling_balls [fontcolor=black]
+		fondling_balls -> ball_fondling [color=black style=solid]
+		rubbing_balls [fontcolor=black]
+		rubbing_balls -> ball_fondling [color=black style=solid]
+	}
+	ball_fondling -> balls [style=bold]
+	subgraph cluster_ball_grab {
+		node [style="solid,setlinewidth(0)"]
+		ball_grab [color=white href="https://e621.net/wiki/show/ball_grab" style="filled,setlinewidth(1)"]
+		ballcaress [fontcolor=black]
+		ballcaress -> ball_grab [color=black style=solid]
+		cupping_balls [fontcolor=black]
+		cupping_balls -> ball_grab [color=black style=solid]
+		grabbing_balls [fontcolor=black]
+		grabbing_balls -> ball_grab [color=black style=solid]
+	}
+	ball_grab -> balls [style=bold]
+	subgraph cluster_barely_visible_balls {
+		node [style="solid,setlinewidth(0)"]
+		barely_visible_balls [color=white href="https://e621.net/wiki/show/barely_visible_balls" style="filled,setlinewidth(1)"]
+		subtle_balls [fontcolor=black]
+		subtle_balls -> barely_visible_balls [color=black style=solid]
+	}
+	barely_visible_balls -> balls [style=bold]
+	subgraph cluster_big_balls {
+		node [style="solid,setlinewidth(0)"]
+		big_balls [color=white href="https://e621.net/wiki/show/big_balls" style="filled,setlinewidth(1)"]
+		large_balls [fontcolor=black]
+		large_balls -> big_balls [color=black style=solid]
+		large_testicles [fontcolor=black]
+		large_testicles -> big_balls [color=black style=solid]
+	}
+	big_balls -> balls [style=bold]
+	subgraph cluster_black_balls {
+		node [style="solid,setlinewidth(0)"]
+		black_balls [color=white href="https://e621.net/wiki/show/black_balls" style="filled,setlinewidth(1)"]
+	}
+	black_balls -> balls [style=bold]
+	subgraph cluster_blue_balls {
+		node [style="solid,setlinewidth(0)"]
+		blue_balls [color=white href="https://e621.net/wiki/show/blue_balls" style="filled,setlinewidth(1)"]
+	}
+	blue_balls -> balls [style=bold]
+	subgraph cluster_bouncing_balls {
+		node [style="solid,setlinewidth(0)"]
+		bouncing_balls [color=white href="https://e621.net/wiki/show/bouncing_balls" style="filled,setlinewidth(1)"]
+		swinging_balls [fontcolor=black]
+		swinging_balls -> bouncing_balls [color=black style=solid]
+	}
+	bouncing_balls -> balls [style=bold]
+	subgraph cluster_brown_balls {
+		node [style="solid,setlinewidth(0)"]
+		brown_balls [color=white href="https://e621.net/wiki/show/brown_balls" style="filled,setlinewidth(1)"]
+	}
+	brown_balls -> balls [style=bold]
+	subgraph cluster_cum_on_balls {
+		node [style="solid,setlinewidth(0)"]
+		cum_on_balls [color=white href="https://e621.net/wiki/show/cum_on_balls" style="filled,setlinewidth(1)"]
+	}
+	cum_on_balls -> balls [style=bold]
+	subgraph cluster_green_balls {
+		node [style="solid,setlinewidth(0)"]
+		green_balls [color=white href="https://e621.net/wiki/show/green_balls" style="filled,setlinewidth(1)"]
+	}
+	green_balls -> balls [style=bold]
+	subgraph cluster_grey_balls {
+		node [style="solid,setlinewidth(0)"]
+		grey_balls [color=white href="https://e621.net/wiki/show/grey_balls" style="filled,setlinewidth(1)"]
+		gray_balls [fontcolor=black]
+		gray_balls -> grey_balls [color=black style=solid]
+	}
+	grey_balls -> balls [style=bold]
+	subgraph cluster_holding_balls {
+		node [style="solid,setlinewidth(0)"]
+		holding_balls [color=white href="https://e621.net/wiki/show/holding_balls" style="filled,setlinewidth(1)"]
+	}
+	holding_balls -> balls [style=bold]
+	subgraph cluster_multi_balls {
+		node [style="solid,setlinewidth(0)"]
+		multi_balls [color=white href="https://e621.net/wiki/show/multi_balls" style="filled,setlinewidth(1)"]
+		polyorchid [fontcolor=red]
+		polyorchid -> multi_balls [color=red style=dotted]
+		multi_ball [fontcolor=black]
+		multi_ball -> multi_balls [color=black style=solid]
+	}
+	multi_balls -> balls [style=bold]
+	subgraph cluster_orange_balls {
+		node [style="solid,setlinewidth(0)"]
+		orange_balls [color=white href="https://e621.net/wiki/show/orange_balls" style="filled,setlinewidth(1)"]
+	}
+	orange_balls -> balls [style=bold]
+	subgraph cluster_purple_balls {
+		node [style="solid,setlinewidth(0)"]
+		purple_balls [color=white href="https://e621.net/wiki/show/purple_balls" style="filled,setlinewidth(1)"]
+	}
+	purple_balls -> balls [style=bold]
+	subgraph cluster_red_balls {
+		node [style="solid,setlinewidth(0)"]
+		red_balls [color=white href="https://e621.net/wiki/show/red_balls" style="filled,setlinewidth(1)"]
+	}
+	red_balls -> balls [style=bold]
+	subgraph cluster_saggy_balls {
+		node [style="solid,setlinewidth(0)"]
+		saggy_balls [color=white href="https://e621.net/wiki/show/saggy_balls" style="filled,setlinewidth(1)"]
+		hanging_balls [fontcolor=black]
+		hanging_balls -> saggy_balls [color=black style=solid]
+		lowhangers [fontcolor=black]
+		lowhangers -> saggy_balls [color=black style=solid]
+		low_hangers [fontcolor=black]
+		low_hangers -> saggy_balls [color=black style=solid]
+		sagging_balls [fontcolor=black]
+		sagging_balls -> saggy_balls [color=black style=solid]
+	}
+	saggy_balls -> balls [style=bold]
+	subgraph cluster_small_balls {
+		node [style="solid,setlinewidth(0)"]
+		small_balls [color=white href="https://e621.net/wiki/show/small_balls" style="filled,setlinewidth(1)"]
+	}
+	small_balls -> balls [style=bold]
+	subgraph cluster_tan_balls {
+		node [style="solid,setlinewidth(0)"]
+		tan_balls [color=white href="https://e621.net/wiki/show/tan_balls" style="filled,setlinewidth(1)"]
+	}
+	tan_balls -> balls [style=bold]
+	subgraph cluster_uniball {
+		node [style="solid,setlinewidth(0)"]
+		uniball [color=white href="https://e621.net/wiki/show/uniball" style="filled,setlinewidth(1)"]
+	}
+	uniball -> balls [style=bold]
+	subgraph cluster_white_balls {
+		node [style="solid,setlinewidth(0)"]
+		white_balls [color=white href="https://e621.net/wiki/show/white_balls" style="filled,setlinewidth(1)"]
+	}
+	white_balls -> balls [style=bold]
+	subgraph cluster_yellow_balls {
+		node [style="solid,setlinewidth(0)"]
+		yellow_balls [color=white href="https://e621.net/wiki/show/yellow_balls" style="filled,setlinewidth(1)"]
+	}
+	yellow_balls -> balls [style=bold]
+	subgraph cluster_micro_balls {
+		node [style="solid,setlinewidth(0)"]
+		micro_balls [color=white href="https://e621.net/wiki/show/micro_balls" style="filled,setlinewidth(1)"]
+	}
+	micro_balls -> small_balls [style=bold]
+	subgraph cluster_3_balls {
+		node [style="solid,setlinewidth(0)"]
+		"3_balls" [color=white href="https://e621.net/wiki/show/3_balls" style="filled,setlinewidth(1)"]
+		triple_balls [fontcolor=black]
+		triple_balls -> "3_balls" [color=black style=solid]
+	}
+	"3_balls" -> multi_balls [style=bold]
+	subgraph cluster_4_balls {
+		node [style="solid,setlinewidth(0)"]
+		"4_balls" [color=white href="https://e621.net/wiki/show/4_balls" style="filled,setlinewidth(1)"]
+	}
+	"4_balls" -> multi_balls [style=bold]
+	subgraph cluster_huge_balls {
+		node [style="solid,setlinewidth(0)"]
+		huge_balls [color=white href="https://e621.net/wiki/show/huge_balls" style="filled,setlinewidth(1)"]
+		huge_testicles [fontcolor=black]
+		huge_testicles -> huge_balls [color=black style=solid]
+	}
+	huge_balls -> big_balls [style=bold]
+	subgraph cluster_hyper_balls {
+		node [style="solid,setlinewidth(0)"]
+		hyper_balls [color=white href="https://e621.net/wiki/show/hyper_balls" style="filled,setlinewidth(1)"]
+		hyper_testicles [fontcolor=black]
+		hyper_testicles -> hyper_balls [color=black style=solid]
+	}
+	hyper_balls -> huge_balls [style=bold]
+}
